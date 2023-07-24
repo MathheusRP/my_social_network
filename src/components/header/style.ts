@@ -1,9 +1,11 @@
 import styled from "styled-components";
 
 export const HeaderStyle = styled.header`
-    position: relative;
+    position: fixed;
     height: 80px;
     width: 100%;
+    left: 0px;
+    right: 0px;
     /* background-color: var(--color1); */
     display: flex;
     padding: 0px 15px;
@@ -145,7 +147,24 @@ export const HeaderStyle = styled.header`
         }
 
         .search {
-            max-width: 600px;
+            /* left: 0px;
+            right: 0px;
+            position: absolute; */
+            /* width: 40%; */
+            max-width: 700px;
+            transform: translateX(-15px);
+        }
+    }
+
+    @media (min-width: 1250px) {
+     
+    }
+
+    @media (min-width: 1400px) {
+        .search {
+            /* width: 40%; */
+            max-width: 700px;
+            /* transform: translateX(-15px); */
         }
     }
 
