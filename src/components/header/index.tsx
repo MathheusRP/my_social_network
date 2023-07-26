@@ -1,4 +1,6 @@
 import { HeaderStyle } from "./style";
+import { Link } from "react-router-dom";
+
 import { ImSearch } from "react-icons/im"
 import { IoIosNotifications } from "react-icons/io"
 import { BsFillChatDotsFill, BsFillGearFill } from "react-icons/bs"
@@ -7,7 +9,7 @@ import { LiaUserFriendsSolid, LiaLinkSolid } from "react-icons/lia"
 import { FaImages } from "react-icons/fa"
 import { CgProfile } from "react-icons/cg"
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 
 
@@ -32,8 +34,12 @@ export const Header = () => {
                 <input type="text" placeholder="Pesquisar..." />
             </div>
             <div className="profile">
-                <IoIosNotifications className="icon" />
-                <BsFillChatDotsFill className="icon" />
+                <Link to={"teste"}>
+                    <IoIosNotifications className="icon" />
+                </Link>
+                <Link to={"messages"}>
+                    <BsFillChatDotsFill className="icon" />
+                </Link>
                 <img onClick={() => statusMenu()} src="https://flowgames.gg/wp-content/uploads/2023/02/l-intro-1657287618-1044x587.jpg" alt="foto de perdil" />
             </div>
             <nav className={menu}>

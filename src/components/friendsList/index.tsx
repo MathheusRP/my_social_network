@@ -14,7 +14,7 @@ export const FriendsList = () => {
             <section className="list">
                 <div className="search">
                     <ImSearch className="icon" />
-                    <input type="text" />
+                    <input type="text" placeholder="Procurar" />
                 </div>
                 <ul>
                     <li>

@@ -1,8 +1,6 @@
 import { FeedStyle } from "./style"
 import { PostButtons } from "../postButtons"
 
-import { AiFillLike, AiOutlineComment, AiOutlineShareAlt } from 'react-icons/ai'
-
 export const Feed = () => {
 
     return (

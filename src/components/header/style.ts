@@ -13,7 +13,7 @@ export const HeaderStyle = styled.header`
     justify-content: space-between;
     gap: 30px;
     z-index: 10;
-    box-shadow: 0px 10px 15px rgb(0, 0, 0, 0.4);
+    box-shadow: 0px 8px 15px rgb(0, 0, 0, 0.3);
 
     .background {
         background-color: var(--color1);
@@ -61,14 +61,22 @@ export const HeaderStyle = styled.header`
         right: 15px;
         display: flex;
         align-items: center;
-        gap: 15px;
+        gap: 20px;
         transition: 1s;
         z-index: 3;
+        transition: 1s;
+        margin-right: 10px;
 
         .icon {
-            width: 40px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
             color: var(--grey_3);
+            transition: 0.5s;
+
+            &:hover {
+                transform: scale(1.2);
+                transition: 1s;
+            }
         }
 
         img {
@@ -76,6 +84,7 @@ export const HeaderStyle = styled.header`
             width: 50px;
             object-fit: cover;
             border-radius: 50%;
+            cursor: pointer;
         }
     }
 
