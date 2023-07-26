@@ -4,6 +4,7 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyled = createGlobalStyle`
 
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400;500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;200;300;400;500;600;700&display=swap');
 
     * {
         padding: 0px;
@@ -22,6 +23,7 @@ export const GlobalStyled = createGlobalStyle`
 
     h1, h2, h3, h4, p, button, b, a, span {
         font-family: 'Inter', sans-serif;
+        font-family: 'Inter Tight', sans-serif;
     }
 
     li, ul {

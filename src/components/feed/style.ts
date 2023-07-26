@@ -29,12 +29,10 @@ export const FeedStyle = styled.div`
             background-color: var(--color1);
             color: var(--grey_3);
             border-radius: 8px;
-            
         }
     }
 
     .postList {
-        /* background-color: var(--grey_3); */
         border-radius: 8px;
 
         ul {
@@ -48,14 +46,11 @@ export const FeedStyle = styled.div`
              padding: 16px;
              border-radius: 8px;
         }
-        
 
         .post {
             display: flex;
             flex-direction: column;
             gap: 15px;
-
-            
 
             .owner {
                 display: flex;
@@ -77,11 +72,11 @@ export const FeedStyle = styled.div`
                     p {
                         color: var(--grey_1);
                         font-size: 12px;
-                        font-weight: 200;
+                        font-weight: 400;
                     }
 
                     .name {
-                        font-weight: 400;
+                        font-weight: 600;
                         color: var(--grey_0);
                         font-size: 18px;
                     }
@@ -94,32 +89,40 @@ export const FeedStyle = styled.div`
                 font-size: 14px;
                 display: flex;
                 flex-direction: column;
-                /* text-align: justify; */
-                gap: 10px;
+                gap: 16px;
 
                 .imageContainer {
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     max-height: 500px;
-                    /* height: 300px; */
                     background-color: var(--grey_2);
-                    /* padding: 10px 0px; */
-                    border-radius: 8px;
-                    
+                    border-radius: 8px;  
                 }
 
                 img {
                     max-height: 500px;
                     border-radius: 8px;
                     max-width: 100%;
-                    /* width: 100%; */
-                    /* height: 300px; */
-                    /* max-width: 500px; */
-                    /* object-fit: cover; */
                 }
             }
             
         }
+    }
+
+    @media (min-width: 800px) {
+
+        .newPost {
+
+            p {
+                font-size: 1.1rem;
+            }
+        }
+
+        .content {
+            p {
+                font-size: 1.1rem;
+            }
+        }  
     }
 `
