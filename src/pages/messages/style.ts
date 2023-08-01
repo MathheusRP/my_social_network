@@ -16,7 +16,129 @@ export const MessagesStyled = styled.section`
         height: 100%;
 
         .friendsList {
-            display: none;
+            background-color: var(--grey_3);
+            display: flex;
+            position: absolute;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            right: 0px;
+            left: 0px;
+            /* max-width: 400px; */
+            height: 100%;
+            border-radius: 16px;
+            padding: 25px 15px;
+                
+            .search {
+                width: 100%;
+                display: flex;
+                height: 40px;
+                color: var(--grey_1);
+                border: 2px solid var(--color1);
+                border-radius: 8px;
+                padding: 0px 15px;
+                align-items: center;
+
+                input {
+                    font-size: 1rem;
+                    font-weight: 600;
+                    background-color: transparent;
+                    border: none;
+                    width: 100%;
+                    outline: none;
+                    padding-right: 15pxs;
+                }
+
+                .icon {
+                    font-size: 24px;
+                }
+            }
+
+            .list {
+                width: 100%;
+                height: 100%;
+                overflow-y: auto;
+
+                &::-webkit-scrollbar{
+                    background-color: transparent;
+                    width: 5px;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: var(--color1);
+                    border-radius: 5px;
+                }
+
+                ul {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    li {
+                        display: flex;
+                        height: 80px;
+                        align-items: center;
+                        gap: 15px;
+                        cursor: pointer;
+
+                        .friendImage {
+                            position: relative;
+
+                            img {
+                                height: 60px;
+                                width: 60px;
+                                border-radius: 50%;
+                                object-fit: cover;
+                            }
+
+                            span {
+                                height: 16px;
+                                width: 16px;
+                                /* background-color: var(--red); */
+                                position: absolute;
+                                right: 0px;
+                                bottom: 6px;
+                                border-radius: 50%;
+                            }
+
+                            span.online {
+                                background-color: var(--green);
+                            }
+
+                            span.offline {
+                                background-color: var(--red);
+                            }
+                        }
+
+                        .friendName {
+                            display: flex;
+                            flex-direction: column;
+                            width: 100%;
+
+                            p {
+                                font-size: 1.2rem;
+                                font-weight: bold;
+                                color: var(--grey_0);    
+                            }
+                        }
+
+                        .icon {
+                            justify-self: flex-end;
+                            font-size: 20px;
+                            width: 30px;
+                            opacity: 0%;
+                            /* background-color: aqua; */
+                        }
+                           
+                        &:hover {
+                            .icon {
+                                opacity: 100%;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         .messageOwner {
@@ -24,12 +146,18 @@ export const MessagesStyled = styled.section`
         }
 
         .messageContainer {
+            z-index: 3;
             display: flex;
             flex-direction: column;
             width: 100%;
             margin: 0px auto;
             max-width: 800px;
             box-shadow: 0px 0px 15px rgb(0, 0, 0, 0.3); 
+            background-color: var(--grey_3);
+
+            &.hidden{
+                z-index: -3;
+            }
 
             .messageHeader {
                 display: flex;
@@ -186,6 +314,14 @@ export const MessagesStyled = styled.section`
             display: flex;
         }
 
+        .person {
+            padding: 0px 15px;
+
+            .icon{
+                display: none;
+            }
+        }
+
         .messagesBody {
             margin-top: 120px;
             height: 82%;
@@ -198,11 +334,14 @@ export const MessagesStyled = styled.section`
                 border-radius: 16px;
                 background-color: var(--grey_3);
 
+                &.hidden{
+                    z-index: 3;
+                }
+
                 .toSend {
                     border: 4px solid var(--color1);
                     border-radius: 0px 0px 16px 16px;
-                    
-
+                
                     .inputSection {
                         border-radius: 0px 0px 16px 16px;
                         padding: 0px;
@@ -211,133 +350,14 @@ export const MessagesStyled = styled.section`
                     .icons {
                         height: 60px;
                         border-radius: 0px 0px 10px 0px;
-
                     }
                 }
             }
 
             .friendsList {
-                background-color: var(--grey_3);
-                display: flex;
-                flex-direction: column;
-                gap: 15px;
-                width: 35%;
+                position: relative;
+                width: 40%;
                 max-width: 400px;
-                height: 100%;
-                border-radius: 16px;
-                padding: 25px 15px;
-                
-                .search {
-                    width: 100%;
-                    display: flex;
-                    height: 40px;
-                    color: var(--grey_1);
-                    border: 2px solid var(--color1);
-                    border-radius: 8px;
-                    padding: 0px 15px;
-                    align-items: center;
-
-                    input {
-                        font-size: 1rem;
-                        font-weight: 600;
-                        background-color: transparent;
-                        border: none;
-                        width: 100%;
-                        outline: none;
-                        padding-right: 15pxs;
-                    }
-
-                    .icon {
-                        font-size: 24px;
-                    }
-                }
-
-                .list {
-                    width: 100%;
-                    height: 100%;
-                    overflow-y: auto;
-
-                    &::-webkit-scrollbar{
-                        background-color: transparent;
-                        width: 5px;
-                    }
-
-                    &::-webkit-scrollbar-thumb {
-                        background-color: var(--color1);
-                        border-radius: 5px;
-                    }
-
-                    ul {
-                        width: 100%;
-                        display: flex;
-                        flex-direction: column;
-                        gap: 10px;
-
-                        li {
-                            display: flex;
-                            height: 80px;
-                            align-items: center;
-                            gap: 15px;
-                            cursor: pointer;
-
-                            .friendImage {
-                                position: relative;
-
-                                img {
-                                    height: 60px;
-                                    width: 60px;
-                                    border-radius: 50%;
-                                    object-fit: cover;
-                                }
-
-                                span {
-                                    height: 16px;
-                                    width: 16px;
-                                    /* background-color: var(--red); */
-                                    position: absolute;
-                                    right: 0px;
-                                    bottom: 6px;
-                                    border-radius: 50%;
-                                }
-
-                                span.online {
-                                    background-color: var(--green);
-                                }
-
-                                span.offline {
-                                    background-color: var(--red);
-                                }
-                            }
-
-                            .friendName {
-                                display: flex;
-                                flex-direction: column;
-                                width: 100%;
-
-                                p {
-                                    font-size: 1.2rem;
-                                    font-weight: bold;
-                                    color: var(--grey_0);
-                                    
-                                }
-                            }
-
-                            .icon {
-                                justify-self: flex-end;
-                                font-size: 20px;
-                                width: 30px;
-                                opacity: 0%;
-                                /* background-color: aqua; */
-                            }
-                           
-                            &:hover {
-                                .icon {
-                                    opacity: 100%;
-                                }
-                            }
-                        }
-                    }
-                }
             }
         }
 

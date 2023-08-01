@@ -7,7 +7,11 @@ import { BsThreeDotsVertical } from "react-icons/bs"
 import { ImSearch } from "react-icons/im"
 import { BsImage, BsFillSendFill } from "react-icons/bs"
 
+import { useState } from "react";
+
 export const Messages = () => {
+
+    const [statusMessageContainer, setStatusMessageContainer] = useState<string> ("visible")
 
     return (
         <MessagesStyled>
@@ -23,7 +27,7 @@ export const Messages = () => {
                             {
                                 friendList.map((frind: IfriendList, index: number) => {
                                     return (
-                                        <li key={index}>
+                                        <li onClick={() => setStatusMessageContainer("visible")} key={index}>
                                             <div className="friendImage">
                                                 <img src={frind.image} alt={`foto de ${frind.name}`} />
                                                 {frind.online ? (<span className="status online"></span>) : <span className="status offline"></span>}
@@ -40,10 +44,10 @@ export const Messages = () => {
                         </ul>
                     </div>
                 </section>
-                <section className="messageContainer">
+                <section className={`messageContainer ${statusMessageContainer}`}>
                     <div className="messageHeader">
                         <div className="person">
-                            <IoIosArrowBack className="icon" />
+                            <IoIosArrowBack className="icon" onClick={() => setStatusMessageContainer("hidden")}/>
                             <img src="https://st3.depositphotos.com/15317184/31994/v/450/depositphotos_319943812-stock-illustration-male-avatar-icon-suitable-for.jpg" alt="foto de perfil" />
                             <h3>Luiz Silva</h3>
                         </div>
