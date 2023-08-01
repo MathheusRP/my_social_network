@@ -39,6 +39,16 @@ export const FriendsListStyle = styled.section`
         gap: 10px;
         overflow-y: auto;
 
+        &::-webkit-scrollbar{
+            background-color: transparent;
+            width: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: var(--color1);
+            border-radius: 5px;
+        }
+
         .search {
            display: flex;
            border: 3px solid var(--color1);
@@ -64,20 +74,13 @@ export const FriendsListStyle = styled.section`
         }
 
         ul {
-            /* height: 70%; */
-            /* background-color: blue; */
             display: flex;
             flex-direction: column;
-            /* background-color: blue; */
-            width: 100%;
-            /* width: 100%; */
-            
-            
+            width: 100%; 
             gap: 20px;
 
             span {
                 position: relative;
-
                 .status {
                     height: 12px;
                     width: 12px;
@@ -102,15 +105,22 @@ export const FriendsListStyle = styled.section`
                 height: 80px;
                 align-items: center;
                 gap: 10px;
+                color: var(--grey_0);
 
                 .name {
                     width: 65%;
+
+                    p {
+                        font-size: 20px;
+                        font-weight: 600;
+                    }
                 }
 
                 img {
                     width: 50px;
                     height: 50px;
                     border-radius: 50%;
+                    object-fit: cover;
                 }
 
                 .icon {
