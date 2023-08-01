@@ -5,7 +5,6 @@ export const MessagesStyled = styled.section`
     height: 100vh;
     display: flex;
     overflow-y: hidden;
-
     
     .header {
         display: none;
@@ -24,15 +23,13 @@ export const MessagesStyled = styled.section`
             display: none; 
         }
 
-
         .messageContainer {
             display: flex;
             flex-direction: column;
             width: 100%;
             margin: 0px auto;
             max-width: 800px;
-            box-shadow: 0px 0px 15px rgb(0, 0, 0, 0.3);
-             
+            box-shadow: 0px 0px 15px rgb(0, 0, 0, 0.3); 
 
             .messageHeader {
                 display: flex;
@@ -142,7 +139,6 @@ export const MessagesStyled = styled.section`
 
             .toSend {
                 border-top: 4px solid var(--color1);
-                /* border-radius: 16px; */
 
                 .inputSection {
                     height: 100%;
@@ -151,8 +147,6 @@ export const MessagesStyled = styled.section`
                     padding: 0px 15px;
                     display: flex;
                     align-items: center;
-                    /* gap: 20px; */
-                    /* border-radius: 16px; */
                 }
 
                 input {
@@ -165,7 +159,6 @@ export const MessagesStyled = styled.section`
                     border: none;
                     outline: none;
                     padding: 0px 15px;
-                    /* border-radius: 16px; */
                 }
 
                 .icons {
@@ -196,16 +189,14 @@ export const MessagesStyled = styled.section`
         .messagesBody {
             margin-top: 120px;
             height: 82%;
-            /* background-color: aquamarine; */
             gap: 10px;
             padding: 0px 15px;
 
             .messageContainer {
                 width: 60%;
-                max-width: 700px;
+                /* max-width: 700px; */
                 border-radius: 16px;
                 background-color: var(--grey_3);
-                /* margin-bottom: 20px; */
 
                 .toSend {
                     border: 4px solid var(--color1);
@@ -226,7 +217,6 @@ export const MessagesStyled = styled.section`
             }
 
             .friendsList {
-                /* position: absolute; */
                 background-color: var(--grey_3);
                 display: flex;
                 flex-direction: column;
@@ -246,7 +236,6 @@ export const MessagesStyled = styled.section`
                     border-radius: 8px;
                     padding: 0px 15px;
                     align-items: center;
-                    
 
                     input {
                         font-size: 1rem;
@@ -264,7 +253,6 @@ export const MessagesStyled = styled.section`
                 }
 
                 .list {
-                    /* background-color: aquamarine; */
                     width: 100%;
                     height: 100%;
                     overflow-y: auto;
@@ -281,8 +269,6 @@ export const MessagesStyled = styled.section`
 
                     ul {
                         width: 100%;
-                        /* background-color: aqua; */
-                        /* border: 2px solid red; */
                         display: flex;
                         flex-direction: column;
                         gap: 10px;
@@ -292,8 +278,7 @@ export const MessagesStyled = styled.section`
                             height: 80px;
                             align-items: center;
                             gap: 15px;
-
-                            
+                            cursor: pointer;
 
                             .friendImage {
                                 position: relative;
@@ -344,10 +329,6 @@ export const MessagesStyled = styled.section`
                                 opacity: 0%;
                                 /* background-color: aqua; */
                             }
-
-                            /* .friendName:hover ~ .icon{
-                                background-color: aqua;
-                            } */
                            
                             &:hover {
                                 .icon {
@@ -355,12 +336,48 @@ export const MessagesStyled = styled.section`
                                 }
                             }
                         }
-
                     }
                 }
             }
         }
 
-        
+        @media (min-width: 1300px) {
+
+            .messagesBody {
+
+                .messageOwner {
+                display: flex;
+                flex-direction: column;
+                padding: 15px;
+                gap: 16px;
+                width: 35%;
+                max-width: 350px;
+                background-color: var(--grey_3);
+                height: 500px;
+                box-shadow: 0px 0px 15px rgb(0, 0, 0, 0.2);
+                border-radius: 16px;
+                align-items: center;
+                justify-content: center;
+                color: var(--color1);
+
+                img {
+                    width: 150px;
+                    height: 150px;
+                    border-radius: 50%;
+                }
+
+                h3 {
+                    font-size: 24px;
+                }
+
+                p {
+                    font-size: 18px;
+                    text-align: center;
+                }
+
+            }
+            }
+            
+        }        
     }
 `

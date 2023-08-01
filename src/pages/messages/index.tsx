@@ -20,17 +20,6 @@ export const Messages = () => {
                     </div>
                     <div className="list">
                         <ul>
-                            {/* <li>
-                                <div className="friendImage">
-                                    <img src="https://i.pinimg.com/236x/ed/dc/8a/eddc8a518978cd3b749d69dbc5f535e1.jpg" alt="foto de perfil" />
-                                    <span className="status online"></span>
-                                </div>
-                                <div className="friendName">
-                                    <p className="name">Maria Eduarda</p>
-                                    <span>Online</span>
-                                </div>
-                                <BsThreeDotsVertical className="icon" />
-                            </li> */}
                             {
                                 friendList.map((frind: IfriendList, index: number) => {
                                     return (
@@ -114,6 +103,9 @@ export const Messages = () => {
                     </section>
                 </section>
                 <section className="messageOwner">
+                    <img src="https://focalizando.com.br/sites/default/files/styles/image_schema/public/2022-11/fotos-para-perfil-masculino-tres-dicas-fundamentais-para-transmitir-imagem-que-deseja.jpg?itok=AA5Liz2j" alt="Foto de Luiz" />
+                    <h3>Luiz Silva</h3>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                 </section>
             </section>
 

@@ -1,5 +1,6 @@
 import { FeedStyle } from "./style"
 import { PostButtons } from "../postButtons"
+import { IPost, Post, IPostComents } from "../../data/postList"
 
 export const Feed = () => {
 
@@ -11,6 +12,30 @@ export const Feed = () => {
             </section>
             <section className="postList">
                 <ul>
+                    {
+                        Post.map((post: IPost, index) => {
+                            return (
+                                <li key={index} className="post">
+                                    <div className="owner">
+                                        <img src="https://lh3.googleusercontent.com/-kSnNyDkgd2E/AAAAAAAAAAI/AAAAAAAABcM/DimvpU0bUPY/photo.jpg" alt="foto de perfil" />
+                                        <div>
+                                            <p className="name">Larissa</p>
+                                            <p>20 de Junho as 13:30</p>
+                                        </div>
+                                    </div>
+                                    <div className="content">
+                                        <p>
+                                            {post.description}
+                                        </p>
+                                        <div className="imageContainer">
+                                            <img src={post.img} alt="Foto" />
+                                        </div>
+                                    </div>
+                                    <PostButtons />
+                                </li>
+                            )
+                        })
+                    }
                     <li className="post">
                         <div className="owner">
                             <img src="https://lh3.googleusercontent.com/-kSnNyDkgd2E/AAAAAAAAAAI/AAAAAAAABcM/DimvpU0bUPY/photo.jpg" alt="foto de perfil" />
