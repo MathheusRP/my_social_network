@@ -2,7 +2,21 @@ import { FeedStyle } from "./style"
 import { PostButtons } from "../postButtons"
 import { IPost, Post, IPostComents } from "../../data/postList"
 
-export const Feed = () => {
+import { useNavigate, useNavigation } from "react-router-dom"
+
+interface IPhotoOpen {
+    setIsThePohotoOpen: any
+}
+
+export const Feed = ({ setIsThePohotoOpen }: IPhotoOpen) => {
+
+    const navigate = useNavigate()
+
+    const openPhoto = () => {
+        setIsThePohotoOpen("photoOpen")
+        navigate("/photo")
+        console.log('oi')
+    }
 
     return (
         <FeedStyle>
@@ -15,7 +29,7 @@ export const Feed = () => {
                     {
                         Post.map((post: IPost, index) => {
                             return (
-                                <li key={index} className="post">
+                                <li onClick={() => openPhoto()} key={index} className="post">
                                     <div className="owner">
                                         <img src={post.owner.image} alt="foto de perfil" />
                                         <div>
@@ -28,10 +42,10 @@ export const Feed = () => {
                                             {post.description}
                                         </p>
                                         <div className="imageContainer">
-                                            {post.img ? (<img src={post.img} alt="Foto" />): (<></>)}
+                                            {post.img ? (<img src={post.img} alt="Foto" />) : (<></>)}
                                         </div>
                                     </div>
-                                    <PostButtons comments={Number(post.comments?.length)} likes={post.likes} id={post.id}/>
+                                    <PostButtons comments={Number(post.comments?.length)} likes={post.likes} id={post.id} />
                                 </li>
                             )
                         })
@@ -56,7 +70,7 @@ export const Feed = () => {
                         </div>
                         <PostButtons />
                     </li> */}
-                    
+
                     {/* <li className="post">
                         <div className="owner">
                             <img src="https://flowgames.gg/wp-content/uploads/2023/02/l-intro-1657287618-1044x587.jpg" alt="foto de perfil" />

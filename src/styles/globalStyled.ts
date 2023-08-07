@@ -14,16 +14,17 @@ export const GlobalStyled = createGlobalStyle`
 
     body {
         overflow-x: hidden;
+        overflow-y: hidden;
 
-        &::-webkit-scrollbar{
+        /* &::-webkit-scrollbar{
             background-color: transparent;
             width: 5px;
-        }
+        } */
 
-        &::-webkit-scrollbar-thumb {
+        /* &::-webkit-scrollbar-thumb {
             background-color: var(--color1);
             border-radius: 5px;
-        }
+        } */
     }
 
     button {

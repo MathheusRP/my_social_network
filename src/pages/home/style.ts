@@ -10,6 +10,23 @@ export const HomeStyle = styled.section`
         gap: 15px;
         justify-content: space-between;
         padding: 15px;
+        max-height: 100vh;
+        overflow-y: scroll;
+
+        &.photoOpen {
+            overflow-y: hidden;
+        }
+
+        &::-webkit-scrollbar{
+            background-color: transparent;
+            width: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: var(--color1);
+            border-radius: 5px;
+        }
+
 
         .menu {
             display: none;
@@ -22,6 +39,7 @@ export const HomeStyle = styled.section`
             min-height: 120vh;
             max-width: 750px;
             margin-top: 100px;
+         
         }
 
        .friends {
