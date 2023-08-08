@@ -3,7 +3,7 @@ import { PostButtons } from "../postButtons"
 import { Post } from "../../data/postList"
 import { IPost } from "../../types/post"
 
-import { useNavigate, useNavigation } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 import { UserContext } from "../../context/userContext"
 import { useContext } from "react"
