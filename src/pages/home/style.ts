@@ -10,11 +10,10 @@ export const HomeStyle = styled.section`
         gap: 15px;
         justify-content: space-between;
         padding: 15px;
-
+   
         .menu {
             display: none;
             max-width: 350px;
-            /* border: 2px solid var(--grey_1); */
         }
 
        .feed {
@@ -22,6 +21,7 @@ export const HomeStyle = styled.section`
             min-height: 120vh;
             max-width: 750px;
             margin-top: 100px;
+         
         }
 
        .friends {

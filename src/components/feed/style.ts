@@ -42,9 +42,10 @@ export const FeedStyle = styled.div`
         }
 
         li {
-             background-color: var(--grey_3);
-             padding: 16px;
-             border-radius: 8px;
+            background-color: var(--grey_3);
+            padding: 16px;
+            border-radius: 8px;
+            cursor: pointer;
         }
 
         .post {
