@@ -1,4 +1,5 @@
 import { FriendsListStyle } from "./style";
+import { IfriendList, friendList } from "../../data/friendList";
 
 import { ImSearch } from "react-icons/im"
 import { CiMenuKebab } from "react-icons/ci"
@@ -17,7 +18,24 @@ export const FriendsList = () => {
                     <input type="text" placeholder="Procurar" />
                 </div>
                 <ul>
-                    <li>
+                    {
+                        friendList.map((friend: IfriendList, index) => {
+                            return (
+                                <li key={index}>
+                                    <span>
+                                        <img src={friend.image} />
+                                        {friend.online ? (<span className="status online"></span>) : (<span className="status offline"></span>)}
+                                    </span>
+                                    <div className="name">
+                                        <p>{friend.name}</p>
+                                        {friend.online ? (<span className="status">Online</span>) : (<span className="status">Offline</span>)}
+                                    </div>
+                                    <CiMenuKebab className="icon" />
+                                </li>
+                            )
+                        })
+                    }
+                    {/* <li>
                         <span>
                             <img src="https://i0.wp.com/png.gratis/imagem/5909f389-12ea-4f7e-a156-9da14735b3aa-imagem-de-perfil-300x300-170408.png?&resize=300%2C300&ssl=1" alt="foto de perfil" />
                             <span className="status online"></span>
@@ -71,7 +89,7 @@ export const FriendsList = () => {
                             <span className="status">Online</span>
                         </div>
                         <CiMenuKebab className="icon" />
-                    </li>
+                    </li> */}
                 </ul>
             </section>
         </FriendsListStyle>

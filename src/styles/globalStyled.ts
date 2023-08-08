@@ -1,7 +1,7 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, css } from "styled-components";
 
 
-export const GlobalStyled = createGlobalStyle`
+export const GlobalStyled = createGlobalStyle<{ isThePhotoOpen: string }>`
 
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400;500;600;700;800&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;200;300;400;500;600;700&display=swap');
@@ -14,6 +14,23 @@ export const GlobalStyled = createGlobalStyle`
 
     body {
         overflow-x: hidden;
+        /* overflow-y: hidden; */
+
+        ${({ isThePhotoOpen }) => {
+        return css`
+                overflow-y: ${isThePhotoOpen};
+            `
+    }}
+
+        &::-webkit-scrollbar{
+            background-color: transparent;
+            width: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: var(--color1);
+            border-radius: 5px;
+        }
     }
 
     button {

@@ -1,10 +1,16 @@
 import { PostButtonsStyle } from "./style";
 import { AiFillLike, AiOutlineComment, AiOutlineShareAlt } from 'react-icons/ai'
 
-export const PostButtons = () => {
+interface IPostInfo {
+    id: string
+    likes: number
+    comments: number
+}
+
+export const PostButtons = ({id, likes, comments}: IPostInfo) => {
 
     return (
-        <PostButtonsStyle>
+        <PostButtonsStyle id={id}>
             <div className="buttons">
                 <div className="buttons">
                     <AiFillLike />
@@ -19,8 +25,8 @@ export const PostButtons = () => {
                 </div>
             </div>
             <div className="postInfo">
-                <p>120 Likes</p>
-                <p>Ver todos os 35 comentários</p>
+                <p>Likes {likes}</p>
+                {comments > 0 ? (<p>Ver todos os {comments} comentários</p>): (<p>Sem comentários</p>)}
             </div>
         </PostButtonsStyle>
     )

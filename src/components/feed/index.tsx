@@ -1,7 +1,25 @@
 import { FeedStyle } from "./style"
 import { PostButtons } from "../postButtons"
+import { Post } from "../../data/postList"
+import { IPost } from "../../types/post"
+
+import { useNavigate } from "react-router-dom"
+
+import { UserContext } from "../../context/userContext"
+import { useContext } from "react"
 
 export const Feed = () => {
+
+    const { setIsThePhotoOpen, setPostOpen } = useContext(UserContext)
+
+    const navigate = useNavigate()
+
+    const openPhoto = (post: IPost) => {
+        setIsThePhotoOpen("hidden")
+        setPostOpen(post)
+        navigate("/photo")
+
+    }
 
     return (
         <FeedStyle>
@@ -11,7 +29,31 @@ export const Feed = () => {
             </section>
             <section className="postList">
                 <ul>
-                    <li className="post">
+                    {
+                        Post.map((post: IPost, index) => {
+                            return (
+                                <li onClick={() => openPhoto(post)} key={index} className="post">
+                                    <div className="owner">
+                                        <img src={post.owner.image} alt="foto de perfil" />
+                                        <div>
+                                            <p className="name">{post.owner.name}</p>
+                                            <p>{post.date}</p>
+                                        </div>
+                                    </div>
+                                    <div className="content">
+                                        <p>
+                                            {post.description}
+                                        </p>
+                                        <div className="imageContainer">
+                                            {post.img ? (<img src={post.img} alt="Foto" />) : (<></>)}
+                                        </div>
+                                    </div>
+                                    <PostButtons comments={Number(post.comments?.length)} likes={post.likes} id={post.id} />
+                                </li>
+                            )
+                        })
+                    }
+                    {/* <li className="post">
                         <div className="owner">
                             <img src="https://lh3.googleusercontent.com/-kSnNyDkgd2E/AAAAAAAAAAI/AAAAAAAABcM/DimvpU0bUPY/photo.jpg" alt="foto de perfil" />
                             <div>
@@ -30,26 +72,9 @@ export const Feed = () => {
                             </div>
                         </div>
                         <PostButtons />
-                    </li>
-                    <li className="post">
-                        <div className="owner">
-                            <img src="https://flowgames.gg/wp-content/uploads/2023/02/l-intro-1657287618-1044x587.jpg" alt="foto de perfil" />
-                            <div>
-                                <p className="name">Matheus</p>
-                                <p>20 de Junho as 13:31</p>
-                            </div>
-                        </div>
-                        <div className="content">
-                            <p>
-                                Bom dia
-                            </p>
-                            {/* <div className="imageContainer">
-                                <img src="https://e0.pxfuel.com/wallpapers/224/278/desktop-wallpaper-nobody-loves-me-sad-lofi-mix-lofi-couple.jpg" alt="Foto" />
-                            </div> */}
-                        </div>
-                        <PostButtons />
-                    </li>
-                    <li className="post">
+                    </li> */}
+
+                    {/* <li className="post">
                         <div className="owner">
                             <img src="https://flowgames.gg/wp-content/uploads/2023/02/l-intro-1657287618-1044x587.jpg" alt="foto de perfil" />
                             <div>
@@ -66,7 +91,7 @@ export const Feed = () => {
                             </div>
                         </div>
                         <PostButtons />
-                    </li>
+                    </li> */}
                 </ul>
             </section>
         </FeedStyle>
