@@ -10,28 +10,10 @@ export const HomeStyle = styled.section`
         gap: 15px;
         justify-content: space-between;
         padding: 15px;
-        max-height: 100vh;
-        overflow-y: scroll;
-
-        &.photoOpen {
-            overflow-y: hidden;
-        }
-
-        &::-webkit-scrollbar{
-            background-color: transparent;
-            width: 5px;
-        }
-
-        &::-webkit-scrollbar-thumb {
-            background-color: var(--color1);
-            border-radius: 5px;
-        }
-
-
+   
         .menu {
             display: none;
             max-width: 350px;
-            /* border: 2px solid var(--grey_1); */
         }
 
        .feed {

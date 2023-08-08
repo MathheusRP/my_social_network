@@ -22,12 +22,30 @@ export const PhotoStyle = styled.section`
     .postDetail {
         display: flex;
         flex-direction: column;
+        width: 100%;
+        height: 100%;
         gap: 10px;
         /* top: 250px; */
         overflow-y: auto;
         /* overflow-y: auto; */
         position: relative;
         padding-right: 10px;
+
+        .close {
+            display: none;
+        }
+
+        &.noImage {
+            max-width: 600px;
+            border-radius: 16px;
+            margin: 0px auto;
+
+            .close {
+                display: block;
+            }
+            
+            
+        }
 
         &::-webkit-scrollbar{
             background-color: transparent;
@@ -40,6 +58,17 @@ export const PhotoStyle = styled.section`
             border-radius: 5px;
         }
 
+        .close {
+            position: absolute;
+            height: 40px;
+            width: 40px;
+            right: 15px;
+            top: 15px;
+            color: var(--color1);
+            cursor: pointer;
+            
+        }
+
         .newComment {
             background-color: var(--grey_3);
             /* width: 100%; */
@@ -49,6 +78,7 @@ export const PhotoStyle = styled.section`
             position: fixed;
             bottom: 10px;
             padding: 15px 0px;
+            
 
             div {
                 border: 4px solid var(--grey_2);
@@ -83,6 +113,10 @@ export const PhotoStyle = styled.section`
         width: 100%;
         display: flex;
         justify-content: center;
+
+        &.noImage {
+            display: none;
+        }
         
         .icon {
             position: absolute;
@@ -99,13 +133,8 @@ export const PhotoStyle = styled.section`
             width: 100%;
             max-width: 600px;
             border-radius: 8px;
-            /* position: fixed; */
-            /* position: fixed;
-            padding: 0px 15px; */
-            /* max-height: 350px; */
-            /* object-fit: cover; */
-            /* object-fit: cover; */
-            /* height: 300px; */
+            max-height: 95%;
+            object-fit: contain;
         }
 
     } 
@@ -155,6 +184,9 @@ export const PhotoStyle = styled.section`
         gap: 50px;
         padding: 25px 0px 40px 0px;
         border-top: 4px solid var(--grey_2);
+        /* min-height: 280px; */
+        /* min-height: fit-content; */
+        height: 100%;
         /* overflow-y: auto; */
         /* max-height: 50vh; */
 
@@ -176,6 +208,7 @@ export const PhotoStyle = styled.section`
 
             .commentContainer {
                 background-color: var(--color2);
+                width: 100%;
                 border-radius: 8px;
                 padding: 20px 0px 20px 40px;
                 color: var(--grey_2);
@@ -213,6 +246,10 @@ export const PhotoStyle = styled.section`
                 gap: 20px;
                 color: var(--grey_1);
                 font-size: 18px;
+
+                p {
+                    cursor: pointer;
+                }
             }
 
             

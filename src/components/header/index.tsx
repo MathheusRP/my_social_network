@@ -28,7 +28,7 @@ export const Header = () => {
     return (
         <HeaderStyle>
             <span className="background"></span>
-            <h1>Social Network</h1>
+            <Link to={"/"}><h1>Social Network</h1></Link>
             <div className="search">
                 <ImSearch className="icon" />
                 <input type="text" placeholder="Pesquisar..." />

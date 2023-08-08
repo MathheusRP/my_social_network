@@ -1,21 +1,24 @@
 import { FeedStyle } from "./style"
 import { PostButtons } from "../postButtons"
-import { IPost, Post, IPostComents } from "../../data/postList"
+import { Post } from "../../data/postList"
+import { IPost } from "../../types/post"
 
 import { useNavigate, useNavigation } from "react-router-dom"
 
-interface IPhotoOpen {
-    setIsThePohotoOpen: any
-}
+import { UserContext } from "../../context/userContext"
+import { useContext } from "react"
 
-export const Feed = ({ setIsThePohotoOpen }: IPhotoOpen) => {
+export const Feed = () => {
+
+    const { setIsThePhotoOpen, setPostOpen } = useContext(UserContext)
 
     const navigate = useNavigate()
 
-    const openPhoto = () => {
-        setIsThePohotoOpen("photoOpen")
+    const openPhoto = (post: IPost) => {
+        setIsThePhotoOpen("hidden")
+        setPostOpen(post)
         navigate("/photo")
-        console.log('oi')
+
     }
 
     return (
@@ -29,7 +32,7 @@ export const Feed = ({ setIsThePohotoOpen }: IPhotoOpen) => {
                     {
                         Post.map((post: IPost, index) => {
                             return (
-                                <li onClick={() => openPhoto()} key={index} className="post">
+                                <li onClick={() => openPhoto(post)} key={index} className="post">
                                     <div className="owner">
                                         <img src={post.owner.image} alt="foto de perfil" />
                                         <div>
