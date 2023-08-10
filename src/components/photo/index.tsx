@@ -8,7 +8,7 @@ import { AiOutlineLike, AiOutlineComment, AiOutlineShareAlt, AiFillCaretDown } f
 import { useNavigate } from "react-router-dom";
 
 import { UserContext } from "../../context/userContext"
-import { useContext, useEffect, useState } from "react"
+import { useContext, useState } from "react"
 
 
 export const Photo = () => {
