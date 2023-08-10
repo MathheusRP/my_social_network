@@ -30,6 +30,8 @@ export const PhotoStyle = styled.section`
         /* overflow-y: auto; */
         position: relative;
         padding-right: 10px;
+        display: none;
+
 
         .close {
             display: none;
