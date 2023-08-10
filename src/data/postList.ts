@@ -54,6 +54,7 @@ export const Post: IPost[] = [
                 image: "https://tm.ibxk.com.br/2017/06/22/22100428046161.jpg?ims=1200x675",
                 comment: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
                 likes: 6
+
             }
         ]
     },
@@ -105,8 +106,12 @@ export const Post: IPost[] = [
             id: "12"
         },
         date: "20 de Junho as 13:31",
+
         description: "",
         img: "https://i.pinimg.com/564x/fb/cf/30/fbcf308ff49cd1569a295ce730a43715.jpg",
+        description: "Lo Fi",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgDXaGmibPVO_WAKYCHfHS8XWbMXt1sx3g4yr_N95mj_QkpPoFAqS2geCpbtyYOTR77nw&usqp=CAU",
+
         likes: 7,
         comments: [
             {

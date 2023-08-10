@@ -32,6 +32,7 @@ export const PhotoStyle = styled.section`
         padding-right: 10px;
         display: none;
 
+
         .close {
             display: none;
         }

@@ -1,3 +1,4 @@
+
 import { PostOpenStyled } from "./styled";
 
 import { AiFillLike, AiOutlineSend, AiOutlineCloseCircle } from "react-icons/ai"
@@ -9,7 +10,6 @@ import { useNavigate } from "react-router-dom";
 
 import { UserContext } from "../../context/userContext"
 import { useContext, useState } from "react"
-
 
 export const Photo = () => {
 
@@ -142,8 +142,6 @@ export const Photo = () => {
                                             )
                                         })
                                     }
-
-
                                     <span>Mais comentarios</span>
                                 </ul>
                                 <div className="input">
@@ -157,7 +155,6 @@ export const Photo = () => {
                         </div>
 
                     </div>
-
                 </>
             ) : (
                 <></>
@@ -165,3 +162,4 @@ export const Photo = () => {
         </PostOpenStyled>
     )
 }
+
