@@ -1,3 +1,4 @@
+
 import { PostOpenStyled } from "./styled";
 
 import { AiFillLike, AiOutlineSend, AiOutlineCloseCircle } from "react-icons/ai"

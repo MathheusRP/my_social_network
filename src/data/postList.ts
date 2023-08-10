@@ -107,6 +107,7 @@ export const Post: IPost[] = [
         date: "20 de Junho as 13:31",
         description: "",
         img: "https://i.pinimg.com/564x/fb/cf/30/fbcf308ff49cd1569a295ce730a43715.jpg",
+
         likes: 7,
         comments: [
             {
