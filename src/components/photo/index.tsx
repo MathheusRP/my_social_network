@@ -1,4 +1,3 @@
-
 import { PostOpenStyled } from "./styled";
 
 import { AiFillLike, AiOutlineSend, AiOutlineCloseCircle } from "react-icons/ai"
@@ -47,7 +46,6 @@ export const Photo = () => {
                 setInfoDisplay("flex")
             }
         }
-
     }
 
     const [commentStatus, setCommentStatus] = useState<string>("close")
@@ -162,4 +160,3 @@ export const Photo = () => {
         </PostOpenStyled>
     )
 }
-
