@@ -8,8 +8,7 @@ import { AiOutlineLike, AiOutlineComment, AiOutlineShareAlt, AiFillCaretDown } f
 import { useNavigate } from "react-router-dom";
 
 import { UserContext } from "../../context/userContext"
-import { useContext, useEffect, useState } from "react"
-
+import { useContext, useState } from "react"
 
 export const Photo = () => {
 
@@ -47,7 +46,6 @@ export const Photo = () => {
                 setInfoDisplay("flex")
             }
         }
-
     }
 
     const [commentStatus, setCommentStatus] = useState<string>("close")
@@ -142,8 +140,6 @@ export const Photo = () => {
                                             )
                                         })
                                     }
-
-
                                     <span>Mais comentarios</span>
                                 </ul>
                                 <div className="input">
@@ -157,7 +153,6 @@ export const Photo = () => {
                         </div>
 
                     </div>
-
                 </>
             ) : (
                 <></>
