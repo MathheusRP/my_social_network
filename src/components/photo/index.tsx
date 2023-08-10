@@ -47,7 +47,6 @@ export const Photo = () => {
                 setInfoDisplay("flex")
             }
         }
-
     }
 
     const [commentStatus, setCommentStatus] = useState<string>("close")
@@ -162,4 +161,3 @@ export const Photo = () => {
         </PostOpenStyled>
     )
 }
-
